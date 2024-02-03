@@ -22,18 +22,34 @@
 
     <script>
 
-
-         
-
         function add() {
            if(inputbx.value === ''){
             alert("You must write something");
            }
            else{
            let li = document.getElementById('inputbx').value
-           document.getElementById('taskbx').innerHTML += "<li>"+li+"<button>Delete</button></li>"
+           document.getElementById('taskbx').innerHTML +=
+            "<li id='child'>"+li+"<button onclick='del()'>Delete</button><button onclick = 'update()'>Update</button></li>"
            }
            document.getElementById('inputbx').value = "";
+        }
+
+        function del(){
+           const b = document.getElementById('taskbx')
+           const c = document.getElementById('child')
+           const d = b.removeChild(c)
+        }
+
+        function update(){
+          const changes = prompt("please enter the updated value","")
+          if(changes != null){
+            document.getElementById('child').innerHTML = changes
+          }
+
+        }
+
+        function store(){
+            localStorage.setItem()
         }
         
     </script>
