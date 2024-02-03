@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do List</title>
+    <style>
+
+    </style>
 </head>
+
 <body>
     <div class="container">
         <div class="inputbx">
             <input type="text" name="" id="inputbx">
-            <button onclick="add()" >Add</button>
+            <button onclick="add()">Add</button>
         </div>
-        <div class="tasks">
-            <li>1.task1</li>
+        <div id="taskbx" class="tasks">
         </div>
     </div>
+
+    <script>
+
+
+         
+
+        function add() {
+           if(inputbx.value === ''){
+            alert("You must write something");
+           }
+           else{
+           let li = document.getElementById('inputbx').value
+           document.getElementById('taskbx').innerHTML += "<li>"+li+"<button>Delete</button></li>"
+           }
+           document.getElementById('inputbx').value = "";
+        }
+        
+    </script>
 </body>
+
 </html>
